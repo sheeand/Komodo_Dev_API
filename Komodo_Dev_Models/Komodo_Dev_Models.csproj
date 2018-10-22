@@ -62,7 +62,6 @@
     <Compile Include="Devs\DevDelete.cs" />
     <Compile Include="Devs\DevEdit.cs" />
     <Compile Include="Devs\DevGetAll.cs" />
-    <Compile Include="IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Teams\TeamCreate.cs" />
     <Compile Include="Teams\TeamDelete.cs" />

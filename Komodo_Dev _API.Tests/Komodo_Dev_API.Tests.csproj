@@ -121,9 +121,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Komodo_Dev _API\Komodo_Dev _API.csproj">
+    <ProjectReference Include="..\Komodo_Dev _API\Komodo_Dev_API.csproj">
       <Project>{E019CF5F-DAD3-44A5-85B2-431DB3831C92}</Project>
-      <Name>Komodo_Dev _API</Name>
+      <Name>Komodo_Dev_API</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

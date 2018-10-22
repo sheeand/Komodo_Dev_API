@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komodo_Dev _API", "Komodo_Dev _API\Komodo_Dev _API.csproj", "{E019CF5F-DAD3-44A5-85B2-431DB3831C92}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komodo_Dev_API", "Komodo_Dev _API\Komodo_Dev_API.csproj", "{E019CF5F-DAD3-44A5-85B2-431DB3831C92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komodo_Dev _API.Tests", "Komodo_Dev _API.Tests\Komodo_Dev _API.Tests.csproj", "{50E2BE50-DEE9-44D8-98B1-3959D4793CED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komodo_Dev_API.Tests", "Komodo_Dev _API.Tests\Komodo_Dev_API.Tests.csproj", "{50E2BE50-DEE9-44D8-98B1-3959D4793CED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komodo_Dev_Models", "Komodo_Dev_Models\Komodo_Dev_Models.csproj", "{584F37E5-D26B-4005-AE37-CDDB1CD18EA6}"
 EndProject

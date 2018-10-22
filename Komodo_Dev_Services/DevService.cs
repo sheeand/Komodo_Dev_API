@@ -9,14 +9,6 @@ namespace Komodo_Dev_Services
 {
     public class DevService
     {
-        private readonly Guid _userId;
-
-        // constructor
-        public DevService(Guid userId)
-        {
-            _userId = userId;
-        }
-
         public bool Create(DevCreate model)
         {
             throw new NotImplementedException();

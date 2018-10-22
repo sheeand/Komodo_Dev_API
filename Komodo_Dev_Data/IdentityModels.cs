@@ -30,9 +30,9 @@ namespace Komodo_Dev__API.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<Dev> Devs { get; set; }
-        public DbSet<Team> Teams { get; set; }
-        public DbSet<Contract> Contracts { get; set; }
+        //public DbSet<Dev> Devs { get; set; }
+        //public DbSet<Team> Teams { get; set; }
+        //public DbSet<Contract> Contracts { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
