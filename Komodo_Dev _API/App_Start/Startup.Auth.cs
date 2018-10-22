@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using Komodo_Dev__API.Providers;
 using Komodo_Dev__API.Models;
+using Komodo_Dev__API.Data;
 
 namespace Komodo_Dev__API
 {

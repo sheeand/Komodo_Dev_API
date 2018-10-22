@@ -5,7 +5,7 @@ namespace Komodo_Dev_Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Komodo_Dev__API.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Komodo_Dev__API.Data.ApplicationDbContext>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace Komodo_Dev_Data.Migrations
             ContextKey = "Komodo_Dev__API.Models.ApplicationDbContext";
         }
 
-        protected override void Seed(Komodo_Dev__API.Models.ApplicationDbContext context)
+        protected override void Seed(Komodo_Dev__API.Data.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
