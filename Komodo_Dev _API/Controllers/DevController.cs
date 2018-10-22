@@ -16,15 +16,16 @@ namespace Komodo_Dev__API.Controllers
 
         // Method that returns the specific dev service 
         // passing in the associated parameter
-        //private DevService CreateDev()
-        //{
-        //    //var id = User.Identity.GetUserId();
-        //    return new DevService();
-        //}
+        private DevService CreateDev()
+        {
+            var id = Guid.Parse(User.Identity.GetUserId());
+            var devService = new DevService(id);
+            return devService;
+        }
 
         // endpoint
-        [HttpPost]
-        [Route("Create")]
+        //[HttpPost]
+        //[Route("Create")]
         public IHttpActionResult Create(DevCreate model)
         {
             if (!ModelState.IsValid)
@@ -32,17 +33,17 @@ namespace Komodo_Dev__API.Controllers
                 return BadRequest(ModelState);
             }
 
-            // Instantiate the specific dev service
-            // var service = CreateDev();
+            //Instantiate the specific dev service
+            var service = CreateDev();
 
-            // Call the appropriate method 
-            // passing in the appropiate model
-            //if (!service.Create(model))
-            //{
-            //    return InternalServerError();
-            //}
+            //Call the appropriate method
+            //passing in the appropiate model
+            if (!service.Create(model))
+            {
+                return InternalServerError();
+            }
 
-            return Ok();
+            return Ok(model);
         }
     }
 }
