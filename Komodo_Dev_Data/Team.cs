@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Komodo_Dev_Data
 {
-    public class Teams
+    public class Team
     {
         [Key] // This means it's the primary key
         public int TeamId { get; set; }

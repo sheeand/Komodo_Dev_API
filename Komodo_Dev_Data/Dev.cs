@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Komodo_Dev_Data
 {
-    public class Devs
+    public class Dev
     {
 
         public enum Proficiency

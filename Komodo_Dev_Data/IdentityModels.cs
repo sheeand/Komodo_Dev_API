@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Komodo_Dev_Data;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -30,9 +31,9 @@ namespace Komodo_Dev__API.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        //public DbSet<Dev> Devs { get; set; }
-        //public DbSet<Team> Teams { get; set; }
-        //public DbSet<Contract> Contracts { get; set; }
+        public DbSet<Dev> Dev { get; set; }
+        public DbSet<Team> Teams { get; set; }
+        public DbSet<Contract> Contracts { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

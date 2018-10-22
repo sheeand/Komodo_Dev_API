@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Komodo_Dev_Data
 {
-    public class Contracts
+    public class Contract
     {
         ///TODO: Add keyword virtual to make foreign keys
         public int ContractId { get; set; }

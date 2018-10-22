@@ -63,6 +63,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Komodo_Dev_Data\Komodo_Dev_Data.csproj">
+      <Project>{22BFB466-C1B2-4315-BC76-353328573727}</Project>
+      <Name>Komodo_Dev_Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Komodo_Dev_Models\Komodo_Dev_Models.csproj">
       <Project>{584F37E5-D26B-4005-AE37-CDDB1CD18EA6}</Project>
       <Name>Komodo_Dev_Models</Name>
