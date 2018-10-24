@@ -5,7 +5,9 @@ using System.Web;
 
 namespace Komodo_Dev__API.Models.Contracts
 {
-    public class ContractEdit
+    public class ContractCreateModel
     {
+        public int DevId { get; set; }
+        public int TeamId { get; set; }
     }
 }

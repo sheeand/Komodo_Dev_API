@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Komodo_Dev__API.Models.Contracts
+namespace Komodo_Dev__API.Models.Teams
 {
-    public class ContractCreate
+    public class TeamGetAllModel
     {
     }
 }

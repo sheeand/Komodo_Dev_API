@@ -228,8 +228,9 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContractController.cs" />
     <Compile Include="Controllers\DevController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -318,6 +319,10 @@
     <ProjectReference Include="..\Komodo_Dev_Data\Komodo_Dev_Data.csproj">
       <Project>{22BFB466-C1B2-4315-BC76-353328573727}</Project>
       <Name>Komodo_Dev_Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Komodo_Dev_Interfaces\Komodo_Dev_Interfaces.csproj">
+      <Project>{14180CEA-2FBB-4075-AEC9-B5E22C688159}</Project>
+      <Name>Komodo_Dev_Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\Komodo_Dev_Models\Komodo_Dev_Models.csproj">
       <Project>{584F37E5-D26B-4005-AE37-CDDB1CD18EA6}</Project>

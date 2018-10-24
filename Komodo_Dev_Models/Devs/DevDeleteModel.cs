@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Komodo_Dev__API.Models.Devs
 {
-    public class DevDelete
+    public class DevDeleteModel
     {
         public int DevId { get; set; }
     }

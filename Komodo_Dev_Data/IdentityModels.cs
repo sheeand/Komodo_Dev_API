@@ -9,13 +9,21 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Komodo_Dev__API.Data
 {
-    // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
+    // You can add profile data for the user by adding more properties
+    // to your ApplicationUser class, please visit 
+    // https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
+
     public class ApplicationUser : IdentityUser
     {
-        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager, string authenticationType)
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(
+            UserManager<ApplicationUser> manager, 
+            string authenticationType)
         {
-            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
-            var userIdentity = await manager.CreateIdentityAsync(this, authenticationType);
+            // Note the authenticationType must match the one 
+            // defined in CookieAuthenticationOptions.AuthenticationType
+            var userIdentity = await manager
+                .CreateIdentityAsync(this, authenticationType);
+
             // Add custom user claims here
             return userIdentity;
         }
@@ -24,18 +32,18 @@ namespace Komodo_Dev__API.Data
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
-        {
-        }
+            : base("DefaultConnection", throwIfV1Schema: false) { }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
 
-        public DbSet<Dev> Dev { get; set; }
-        public DbSet<Team> Teams { get; set; }
-        public DbSet<Contract> Contracts { get; set; }
+        // These properties represent the database tables,        
+        // and are used in the methods of the Services layer 
+        public DbSet<DevData> Developers { get; set; }
+        public DbSet<TeamData> Teams { get; set; }
+        public DbSet<ContractData> Contracts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -49,14 +57,16 @@ namespace Komodo_Dev__API.Data
             .Add(new IdentityUserRoleConfiguration());
         }
     }
-    public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
+    public class IdentityUserLoginConfiguration 
+        : EntityTypeConfiguration<IdentityUserLogin>
     {
         public IdentityUserLoginConfiguration()
         {
             HasKey(iul => iul.UserId);
         }
     }
-    public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
+    public class IdentityUserRoleConfiguration 
+        : EntityTypeConfiguration<IdentityUserRole>
     {
         public IdentityUserRoleConfiguration()
         {

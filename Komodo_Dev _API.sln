@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komodo_Dev_Services", "Komo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komodo_Dev_Data", "Komodo_Dev_Data\Komodo_Dev_Data.csproj", "{22BFB466-C1B2-4315-BC76-353328573727}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komodo_Dev_Interfaces", "Komodo_Dev_Interfaces\Komodo_Dev_Interfaces.csproj", "{14180CEA-2FBB-4075-AEC9-B5E22C688159}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{22BFB466-C1B2-4315-BC76-353328573727}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22BFB466-C1B2-4315-BC76-353328573727}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22BFB466-C1B2-4315-BC76-353328573727}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14180CEA-2FBB-4075-AEC9-B5E22C688159}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14180CEA-2FBB-4075-AEC9-B5E22C688159}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14180CEA-2FBB-4075-AEC9-B5E22C688159}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14180CEA-2FBB-4075-AEC9-B5E22C688159}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

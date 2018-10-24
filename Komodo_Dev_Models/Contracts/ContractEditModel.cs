@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace Komodo_Dev_Data
+namespace Komodo_Dev__API.Models.Contracts
 {
-    public class Contract
+    public class ContractEditModel
     {
-        ///TODO: Add keyword virtual to make foreign keys
         public int ContractId { get; set; }
         public int DevId { get; set; }
         public int TeamId { get; set; }

@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Komodo_Dev_Data
 {
-    public class Dev
+    public class DevData // This class type is referenced in DbSet<>() in IdentityModels.cs
     {
-
         public enum Proficiency
         {
             Entry,

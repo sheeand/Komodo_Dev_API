@@ -110,9 +110,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\TeamController_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controllers\HomeControllerTest.cs" />
-    <Compile Include="Controllers\ValuesControllerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -124,6 +123,22 @@
     <ProjectReference Include="..\Komodo_Dev _API\Komodo_Dev_API.csproj">
       <Project>{E019CF5F-DAD3-44A5-85B2-431DB3831C92}</Project>
       <Name>Komodo_Dev_API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Komodo_Dev_Data\Komodo_Dev_Data.csproj">
+      <Project>{22bfb466-c1b2-4315-bc76-353328573727}</Project>
+      <Name>Komodo_Dev_Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Komodo_Dev_Interfaces\Komodo_Dev_Interfaces.csproj">
+      <Project>{14180cea-2fbb-4075-aec9-b5e22c688159}</Project>
+      <Name>Komodo_Dev_Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Komodo_Dev_Models\Komodo_Dev_Models.csproj">
+      <Project>{584f37e5-d26b-4005-ae37-cddb1cd18ea6}</Project>
+      <Name>Komodo_Dev_Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Komodo_Dev_Services\Komodo_Dev_Services.csproj">
+      <Project>{8953ee0e-28f5-47d3-a0c4-94acb64dc2a5}</Project>
+      <Name>Komodo_Dev_Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -54,19 +54,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Contracts\ContractCreate.cs" />
-    <Compile Include="Contracts\ContractDelete.cs" />
-    <Compile Include="Contracts\ContractEdit.cs" />
-    <Compile Include="Contracts\ContractGetAll.cs" />
-    <Compile Include="Devs\DevCreate.cs" />
-    <Compile Include="Devs\DevDelete.cs" />
-    <Compile Include="Devs\DevEdit.cs" />
-    <Compile Include="Devs\DevGetAll.cs" />
+    <Compile Include="Contracts\ContractCreateModel.cs" />
+    <Compile Include="Contracts\ContractDeleteModel.cs" />
+    <Compile Include="Contracts\ContractEditModel.cs" />
+    <Compile Include="Contracts\ContractGetAllModel.cs" />
+    <Compile Include="Devs\DevCreateModel.cs" />
+    <Compile Include="Devs\DevDeleteModel.cs" />
+    <Compile Include="Devs\DevEditModel.cs" />
+    <Compile Include="Devs\DevGetAlModell.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Teams\TeamCreate.cs" />
-    <Compile Include="Teams\TeamDelete.cs" />
-    <Compile Include="Teams\TeamEdit.cs" />
-    <Compile Include="Teams\TeamGetAll.cs" />
+    <Compile Include="Teams\TeamCreateModel.cs" />
+    <Compile Include="Teams\TeamDeleteModel.cs" />
+    <Compile Include="Teams\TeamEditModel.cs" />
+    <Compile Include="Teams\TeamGetAllModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

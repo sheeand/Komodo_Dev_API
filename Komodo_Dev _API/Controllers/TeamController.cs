@@ -1,4 +1,5 @@
-﻿using Komodo_Dev__API.Models.Devs;
+﻿using Komodo_Dev__API.Models.Teams;
+using Komodo_Dev_Interfaces;
 using Komodo_Dev_Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -10,29 +11,41 @@ using System.Web.Http;
 
 namespace Komodo_Dev__API.Controllers
 {
-    [RoutePrefix("api/Dev")]
-    public class DevController : ApiController
+    [RoutePrefix("api/Team")]
+    public class TeamController : ApiController
     {
+        private ITeamService _teamService;
 
-        // Helper methods that returns the specific dev service 
-        // passing in the associated parameter
-        private DevService LocalDevService()
+        // This is the constructor for normal use
+        public TeamController()
+        {
+            _teamService = LocalTeamService();
+        }
+
+        // This is the overload mock constructor for unit tests
+        public TeamController(TeamService mockService)
+        {
+            _teamService = mockService;
+        }
+
+        // Helper method
+        private ITeamService LocalTeamService()
         {
             var id = Guid.Parse(User.Identity.GetUserId());
-            var devService = new DevService(id);
-            return devService;
+            return new TeamService(id);
         }
 
         // endpoint
-        public IHttpActionResult Create(DevCreateModel model)
+        [Route("Create")]
+        public IHttpActionResult Create(TeamCreateModel model) 
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            //Instantiate the specific dev service
-            var service = LocalDevService();
+            //Instantiate a dev service object
+            var service = _teamService;
 
             //Call the appropriate method
             //passing in the appropiate model
@@ -45,14 +58,15 @@ namespace Komodo_Dev__API.Controllers
         }
 
         // endpoint
-        public IHttpActionResult Put(DevEditModel model)
+        [Route("Edit")]
+        public IHttpActionResult Put(TeamEditModel model)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var service = LocalDevService();
+            var service = LocalTeamService();
 
             if (!service.Edit(model))
             {
@@ -63,9 +77,9 @@ namespace Komodo_Dev__API.Controllers
         }
 
         // endpoint
-        public IHttpActionResult Delete(int id)
+        public IHttpActionResult Delete(int id) // This will be the /number at the end of the url (if named "id")
         {
-            var service = LocalDevService();
+            var service = LocalTeamService();
 
             if (!ModelState.IsValid)
             {
@@ -79,24 +93,6 @@ namespace Komodo_Dev__API.Controllers
 
             return Ok(id);
         }
-
-
-        //public IHttpActionResult GetAll(DevGetAllModel model)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    var service = GetAllDev(model);
-
-        //    if (!service(model))
-        //    {
-        //        return InternalServerError();
-        //    }
-
-        //    return Ok(model);
-        //}
 
     }
 }

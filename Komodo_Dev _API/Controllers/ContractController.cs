@@ -1,4 +1,5 @@
-﻿using Komodo_Dev__API.Models.Devs;
+﻿using Komodo_Dev__API.Models.Contracts;
+using Komodo_Dev__API.Models.Teams;
 using Komodo_Dev_Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -10,21 +11,19 @@ using System.Web.Http;
 
 namespace Komodo_Dev__API.Controllers
 {
-    [RoutePrefix("api/Dev")]
-    public class DevController : ApiController
+    [RoutePrefix("api/Contract")]
+    public class ContractController : ApiController
     {
-
-        // Helper methods that returns the specific dev service 
-        // passing in the associated parameter
-        private DevService LocalDevService()
+        private ContractService LocalContractService()
         {
             var id = Guid.Parse(User.Identity.GetUserId());
-            var devService = new DevService(id);
-            return devService;
+            var contractService = new ContractService(id);
+            return contractService;
         }
 
         // endpoint
-        public IHttpActionResult Create(DevCreateModel model)
+        [Route("Create")]
+        public IHttpActionResult Create(ContractCreateModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -32,7 +31,7 @@ namespace Komodo_Dev__API.Controllers
             }
 
             //Instantiate the specific dev service
-            var service = LocalDevService();
+            var service = LocalContractService();
 
             //Call the appropriate method
             //passing in the appropiate model
@@ -45,14 +44,15 @@ namespace Komodo_Dev__API.Controllers
         }
 
         // endpoint
-        public IHttpActionResult Put(DevEditModel model)
+        [Route("Edit")]
+        public IHttpActionResult Put(ContractEditModel model)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var service = LocalDevService();
+            var service = LocalContractService();
 
             if (!service.Edit(model))
             {
@@ -63,9 +63,9 @@ namespace Komodo_Dev__API.Controllers
         }
 
         // endpoint
-        public IHttpActionResult Delete(int id)
+        public IHttpActionResult Delete(int id) // This will be the /number at the end of the url (if named "id")
         {
-            var service = LocalDevService();
+            var service = LocalContractService();
 
             if (!ModelState.IsValid)
             {
@@ -79,24 +79,6 @@ namespace Komodo_Dev__API.Controllers
 
             return Ok(id);
         }
-
-
-        //public IHttpActionResult GetAll(DevGetAllModel model)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    var service = GetAllDev(model);
-
-        //    if (!service(model))
-        //    {
-        //        return InternalServerError();
-        //    }
-
-        //    return Ok(model);
-        //}
 
     }
 }

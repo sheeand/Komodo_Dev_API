@@ -20,12 +20,10 @@ namespace Komodo_Dev_Services
             _userId = Id;
         }
 
-        public bool Create(DevCreate model)
+        public bool Create(DevCreateModel model)
         {
-            //throw new NotImplementedException();
-
             // Object Initialization Syntax 
-            var entity = new Dev()
+            var entity = new DevData()
             {
                 Name = model.Name,
                 HireDate = model.HireDate,
@@ -35,15 +33,26 @@ namespace Komodo_Dev_Services
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Dev.Create();
+                ctx.Developers.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
-
         }
 
-        public bool Edit(DevCreate model)
+        public bool Edit(DevEditModel model)
         {
-            throw new NotImplementedException();
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Developers
+                        .Single(e => e.DevId == model.DevId); // && e.OwnerId == _userId
+
+                entity.Name = model.Name;
+                entity.HireDate = model.HireDate;
+                entity.ProficiencyLevel = model.ProficiencyLevel;
+
+                return ctx.SaveChanges() == 1;
+            }
         }
 
         public bool GetById(int userId)
@@ -51,15 +60,23 @@ namespace Komodo_Dev_Services
             throw new NotImplementedException();
         }
 
-        public bool GetAll(DevCreate model)
+        public bool GetAll(DevGetAllModel model)
         {
             throw new NotImplementedException();
         }
 
         public bool Delete(int userId)
         {
-            throw new NotImplementedException();
-        }
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Developers
+                        .Single(e => e.DevId == userId); // && e.OwnerId == _userId
 
+                ctx.Developers.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

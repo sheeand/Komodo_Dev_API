@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace Komodo_Dev_Data
 {
-    public class Team
+    public class ContractData
     {
-        [Key] // This means it's the primary key
+        ///TODO: Add keyword virtual to make foreign keys
+        [Key]
+        public int ContractId { get; set; }
+        public int DevId { get; set; }
         public int TeamId { get; set; }
-
-        public string Name { get; set; }
     }
 }

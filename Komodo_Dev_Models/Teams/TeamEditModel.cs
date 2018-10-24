@@ -5,7 +5,9 @@ using System.Web;
 
 namespace Komodo_Dev__API.Models.Teams
 {
-    public class TeamEdit
+    public class TeamEditModel
     {
+        public int TeamId { get; set; }
+        public string Name { get; set; }
     }
 }
